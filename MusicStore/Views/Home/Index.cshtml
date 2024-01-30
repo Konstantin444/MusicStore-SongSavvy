@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col">
+            <h1 class="text-center mb-4">Welcome to SongSavvy</h1>
+            <p class="lead text-center">Discover the world of music with us.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Featured Album</h5>
+                    <p class="card-text">Check out the latest hits in our featured album collection.</p>
+                    <a href="@Url.Action("Index", "Albums")" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Top Artists</h5>
+                    <p class="card-text">Meet the artists who are rocking the charts.</p>
+                    <a href="@Url.Action("Index", "Artists")" class="btn btn-primary">See Artists</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">New Releases</h5>
+                    <p class="card-text">Be the first to hear the latest songs as soon as they drop.</p>
+                    <a href="@Url.Action("Index", "Songs")" class="btn btn-primary">Discover New Music</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

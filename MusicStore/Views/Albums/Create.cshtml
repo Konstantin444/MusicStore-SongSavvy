@@ -1,0 +1,64 @@
+﻿@model MusicStore.Models.Album
+
+@{
+    ViewData["Title"] = "Add Album";
+}
+<br />
+<h1>Add an Album</h1>
+<hr />
+<div class="container mt-4">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group text-center">
+                    <img id="AlbumCoverPreview" class="border-info rounded-square" style="max-width: 150px" />
+                </div>
+                <div class="form-group mb-3">
+                    <!-- Add margin bottom -->
+                    <label asp-for="AlbumCoverURL" class="control-label"></label>
+                    <input asp-for="AlbumCoverURL" class="form-control" />
+                    <span asp-validation-for="AlbumCoverURL" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReleaseDate" class="control-label"></label>
+                    <input asp-for="ReleaseDate" class="form-control" />
+                    <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-primary btn-block" />
+        </div>
+    </form>
+
+    <div class="text-center">
+        <a asp-action="Index" class="btn btn-secondary btn-block">Back to Albums</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('AlbumCoverPreview');
+            output.src = $("#AlbumCoverURL").val();
+        })
+
+        $("#AlbumCoverURL").on("change", function () {
+            var output = document.getElementById('AlbumCoverPreview');
+            output.src = $(this).val();
+        })
+    </script>
+}

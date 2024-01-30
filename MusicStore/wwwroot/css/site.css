@@ -1,0 +1,105 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+    .custom-navbar .navbar-collapse {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    margin-bottom: 60px;
+}
+
+.table td {
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.navbar-custom {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #212529;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: white !important;
+    text-transform: uppercase;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .navbar-nav {
+    flex-grow: 0.4;
+    justify-content: space-evenly;
+}
+
+.custom-brand {
+    margin-left: 2%;
+    text-align: left;
+}
+
+.custom-nav {
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: black;
+    border-color: black;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
+        background-color: #333333; /* Dark gray for hover and active states */
+        border-color: #333333;
+    }
+
+    .btn-primary:disabled {
+        background-color: #666666; /* Lighter gray for disabled state */
+        border-color: #666666;
+    }
+
+footer {
+    padding: 1rem 0;
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+footer a {
+        color: #6c757d; /* Adjust the color to match your preference */
+        text-decoration: none; /* Removes underline */
+}
+
+footer a:hover {
+        color: black; /* Color on hover */
+}

@@ -1,0 +1,50 @@
+﻿@model MusicStore.Models.Song
+
+@{
+    ViewData["Title"] = "Add Song";
+}
+
+<br />
+<h1>Add a Song</h1>
+<hr />
+<div class="container mt-4">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label asp-for="SongTitle" class="control-label"></label>
+                    <input asp-for="SongTitle" class="form-control" />
+                    <span asp-validation-for="SongTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Genre" class="control-label"></label>
+                    <input asp-for="Genre" class="form-control" />
+                    <span asp-validation-for="Genre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReleaseYear" class="control-label"></label>
+                    <input asp-for="ReleaseYear" class="form-control" />
+                    <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ArtistID" class="control-label">Artist</label>
+                    <select asp-for="ArtistID" class="form-control" asp-items="ViewBag.ArtistID"></select>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div class="form-group text-left">
+            <button type="submit" class="btn btn-primary">Add</button>
+            <a asp-action="Index" class="btn btn-secondary ml-2">Back to Songs</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MusicStore.Models.AlbumSong>
+
+@{
+    ViewData["Title"] = "Album Songs";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+            <p class="text-center">
+                <a asp-action="Create" class="btn btn-primary">Add Song To Album</a>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Album.Title)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Song.SongTitle)
+                            </th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td style="font-size: 18px">
+                                    @Html.DisplayFor(modelItem => item.Album.Title)
+                                </td>
+                                <td style="font-size: 18px">
+                                    @Html.DisplayFor(modelItem => item.Song.SongTitle)
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <a asp-action="Edit" asp-route-id="@item.AlbumSongID" class="btn btn-primary btn-sm d-flex align-items-center mb-2 justify-content-center">Edit</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a asp-action="Details" asp-route-id="@item.AlbumSongID" class="btn btn-info btn-sm d-flex align-items-center mb-2 justify-content-center">Details</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a asp-action="Delete" asp-route-id="@item.AlbumSongID" class="btn btn-danger btn-sm d-flex align-items-center justify-content-center">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

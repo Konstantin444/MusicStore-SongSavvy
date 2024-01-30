@@ -1,0 +1,44 @@
+﻿@model MusicStore.Models.AlbumSong
+
+@{
+    ViewData["Title"] = "Edit Album and Song";
+}
+
+<br />
+<h1>Edit</h1>
+
+<h4>Album and Song</h4>
+<hr />
+<div class="container mt-4">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="AlbumSongID" />
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label asp-for="AlbumID" class="control-label">Album</label>
+                    <select asp-for="AlbumID" class="form-control" asp-items="ViewBag.AlbumID"></select>
+                    <span asp-validation-for="AlbumID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SongID" class="control-label">Song</label>
+                    <select asp-for="SongID" class="form-control" asp-items="ViewBag.SongID"></select>
+                    <span asp-validation-for="SongID" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div class="form-group text-left">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Index" class="btn btn-secondary ml-2">Back to the List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
